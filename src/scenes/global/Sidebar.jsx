@@ -52,6 +52,18 @@ const Sidebarr = () => {
               style={{
                 margin: "10px 0 20px 0",
                 color: colors.grey[100],
+              }}
+              rootStyles={{
+                a: {
+                  [`&.ps-menu-button:hover`]: {
+                    color: "#868dfb !important",
+                    backgroundColor: 'transparent !important'
+                  },
+                  [`&.ps-menu-button.ps-active:hover`]: {
+                    color: "#6870fa !important",
+                    backgroundColor: "transparent !important"
+                  },
+                }
               }}>
 
             {!isCollapsed && (
