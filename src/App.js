@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from "@mui/material/styles";
 
 import Topbar from "./scenes/global/Topbar";
-import Sidebar from "react-pro-sidebar";
+import Sidebarr from "./scenes/global/Sidebar";
 import Dashboard from './scenes/dashboard/dashboard'
 // import Team from './scenes/team'
 // import Invoices from './scenes/invoices'
@@ -26,7 +26,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <div className="app">
-            {/* <Sidebar /> */}
+            <Sidebarr />
             <main className="content">
               <Topbar />
               <Routes>

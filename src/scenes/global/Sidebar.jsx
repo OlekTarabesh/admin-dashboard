@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { Sidebar, Menu, MenuItem, sidebarClasses } from 'react-pro-sidebar';
+import { Box, IconButton, Typography, useTheme } from '@mui/material'
 
-import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import "react-pro-sidebar/dist/css/styles.css";
+// import "react-pro-sidebar/dist/css/styles.css";
 
 import { tokens } from '../../theme';
-import { Box, IconButton, Typografy, useTheme } from '@mui/material'
+
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
@@ -20,35 +21,43 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 
-
-
-
-const Sidebar = () => {
+const Sidebarr = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [ isCollapsed, setIsCollapsed ] = useState(false);
   const [ selected, setSelected ] = useState('Dashboard');
   return (
-    <Box sx={{
-      '& .pro-sidebar-inner': {
-        background: `${colors.primary[400]} !important`
-      },
-      '& .pro-icon-wrapper': {
-        backgroundColor: 'transparent !important'
-      },
-      '& .pro-inner-item': {
-        padding: '5px 35px 5px 20px !important'
-      },
-      '& .pro-inner-item:hover': {
-        color: '#868dfb !important'
-      },
-      '& .pro-menu-item.active': {
-        color: '#6870fa !important'
-      }
-    }}>
-      Sidebar
-    </Box>
+      <Sidebar collapsed={isCollapsed} rootStyles={{
+        [`.${sidebarClasses.container}`]: {
+          background: `${colors.primary[400]} !important`
+        }
+      }}>
+        {/* Here👇🏻 is a new styling of MUI library. Check it out! */}
+        <Menu rootStyles={{
+          div: {
+            [`&.MuiBox-root.css-1l8icbj`]: {
+              padding: '5px 10px 5px 12px !important'
+            },
+          li: {
+            [`&.ps-menu-button-root:hover`]: {
+              padding: "5px 35px 5px 20px !important"
+              },
+            },  
+          },
+        }}>
+          <MenuItem
+              onClick={() => setIsCollapsed(!isCollapsed)}
+              icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+              style={{
+                margin: "10px 0 20px 0",
+                color: colors.grey[100],
+              }}
+            >
+            </MenuItem>
+        </Menu>
+      </Sidebar>
   )
 }
 
-export default Sidebar
+export default Sidebarr
+
