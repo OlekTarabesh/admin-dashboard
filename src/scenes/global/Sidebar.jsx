@@ -59,7 +59,7 @@ const Sidebarr = () => {
                     color: "#868dfb !important",
                     backgroundColor: 'transparent !important'
                   },
-                  [`&.ps-menu-button.ps-active:hover`]: {
+                  [`&.ps-menu-button.ps-active`]: {
                     color: "#6870fa !important",
                     backgroundColor: "transparent !important"
                   },
