@@ -20,6 +20,33 @@ const Calendar = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const [currentEvents, setCurrentEvents] = useState([]);
+
+    //this will trigger prompt of what type of event you want to add 
+    const handleDateClick = (selected) => {
+        console.log(selected);
+        const title = prompt('Please enter a new title for your event');
+        const calendarApi = selected.view.calendar;
+        calendarApi.unselect();
+
+        if(title) {
+            calendarApi.addEvent({
+                id: `${selected.dateStr}-${title}`,
+                title,
+                start: selected.startStr,
+                end: selected.endStr,
+                allDay: selected.allDay,
+            });
+        }
+    };
+    //this for removing event 
+    const handelEventClick = (selected) => {
+        if(window.confirm(
+            `Are you sure you want to delete the event? '${selected.event.title}'`
+        )) {
+            selected.event.remove();
+        }
+    }
+
   return (
     <Box></Box>
   )
