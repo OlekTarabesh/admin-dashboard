@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Sidebar, Menu, MenuItem, sidebarClasses } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 
-// import "react-pro-sidebar/dist/css/styles.css";
 import Item from "../../components/item/item";
 import { tokens } from "../../theme";
 
@@ -33,15 +32,14 @@ const Sidebarr = () => {
         },
       }}
     >
-      {/* Here👇🏻 is a new styling of MUI library. Check it out! */}
       <Menu
         rootStyles={{
           div: {
-            [`&.MuiBox-root.css-1l8icbj`]: {
+            [`& .MuiBox-root.css-1l8icbj`]: {
               padding: "5px 10px 5px 12px !important",
             },
             li: {
-              [`&.ps-menu-button-root:hover`]: {
+              [`& .ps-menu-button-root:hover`]: {
                 padding: "5px 35px 5px 20px !important",
               },
             },
