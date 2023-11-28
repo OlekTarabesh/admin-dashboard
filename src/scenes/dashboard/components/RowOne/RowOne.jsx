@@ -1,20 +1,16 @@
-import { useTheme } from "@emotion/react";
-import { Box } from "@mui/material";
+import { useTheme } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 
-import StatBox from "../../../components/StatBox";
+import StatBox from "../../../../components/StatBox";
 
-import { tokens } from "../../../theme";
+import { tokens } from "../../../../theme";
+import { Wrapper } from "./styles";
 
 export const RowOne = ({ title, subtitle, progress, increase }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <Box
-      gridColumn="span 3"
-      backgroundColor={colors.primary[400]}
-      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-    >
+    <Wrapper backgroundColor={colors.primary[400]}>
       <StatBox
         title={title}
         subtitle={subtitle}
@@ -26,6 +22,6 @@ export const RowOne = ({ title, subtitle, progress, increase }) => {
           />
         }
       />
-    </Box>
+    </Wrapper>
   );
 };

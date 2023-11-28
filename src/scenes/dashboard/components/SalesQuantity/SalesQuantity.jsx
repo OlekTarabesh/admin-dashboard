@@ -1,18 +1,20 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
-import { useTheme } from "@emotion/react";
-import { tokens } from "../../../theme";
-import BarChart from "../../../components/BarChart";
+import { tokens } from "../../../../theme";
+import BarChart from "../../../../components/BarChart";
+import { Wrapper } from "./styles";
 
 export const SalesQuantity = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box
-      gridColumn="span 4"
-      gridRow="span 2"
-      backgroundColor={colors.primary[400]}
+    <Wrapper
+      sx={{
+        gridColumn: "span 4",
+        gridRow: "span 2",
+        backgroundColor: `${colors.primary[400]}`,
+      }}
     >
       <Typography variant="h5" fontWeight="600" sx={{ p: "30px 30px 0 30px" }}>
         Sales Quantity
@@ -20,6 +22,6 @@ export const SalesQuantity = () => {
       <Box height="250px" mt="-20px">
         <BarChart isDashboard={true} />
       </Box>
-    </Box>
+    </Wrapper>
   );
 };

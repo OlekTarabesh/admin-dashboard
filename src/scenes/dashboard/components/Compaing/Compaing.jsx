@@ -1,19 +1,21 @@
-import { Box, Typography } from "@mui/material";
-import React from "react";
-import ProgressCircle from "../../../components/ProgressCircle";
+import { Box, Typography, useTheme } from "@mui/material";
 
-import { useTheme } from "@emotion/react";
-import { tokens } from "../../../theme";
+import ProgressCircle from "../../../../components/ProgressCircle";
+
+import { tokens } from "../../../../theme";
+import { Wrapper } from "./styles";
 
 export const Compaing = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <Box
-      gridColumn="span 4"
-      gridRow="span 2"
-      backgroundColor={colors.primary[400]}
-      p="30px"
+    <Wrapper
+      sx={{
+        gridColumn: "span 4",
+        gridRow: "span 2",
+        p: "30px",
+        backgroundColor: `${colors.primary[400]}`,
+      }}
     >
       <Typography variant="h5" fontWeight="600">
         Compaign
@@ -29,6 +31,6 @@ export const Compaing = () => {
         </Typography>
         <Typography>Includes extra misc expenditures and costs</Typography>
       </Box>
-    </Box>
+    </Wrapper>
   );
 };

@@ -1,19 +1,15 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import { useTheme } from "@emotion/react";
 
-import LineChart from "../../../components/LineChart";
-import { tokens } from "../../../theme";
+import LineChart from "../../../../components/LineChart";
+import { tokens } from "../../../../theme";
+import { Wrapper } from "./styles";
 
 export const RevenueGenerated = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <Box
-      gridColumn="span 8"
-      gridRow="span 2"
-      backgroundColor={colors.primary[400]}
-    >
+    <Wrapper backgroundColor={colors.primary[400]}>
       <Box
         mt="25px"
         p="0 30px"
@@ -44,6 +40,6 @@ export const RevenueGenerated = () => {
       <Box height="250px" mt="-20px">
         <LineChart isDashboard={true} />
       </Box>
-    </Box>
+    </Wrapper>
   );
 };

@@ -10,6 +10,7 @@ import {
   Transactions,
 } from "./components";
 
+import { Content } from "./styles";
 import { mockTransactions } from "../../data/mockData";
 import { row1 } from "./db";
 
@@ -19,12 +20,7 @@ const Dashboard = () => {
       {/* HEADER */}
       <DashboardHeader />
       {/* GRID AND CHARTS */}
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
-        gap="20px"
-      >
+      <Content>
         {/* ROW 1 */}
         {row1.map((bar, i) => (
           <RowOne
@@ -42,7 +38,7 @@ const Dashboard = () => {
         <Compaing />
         <SalesQuantity />
         <GeographyBasedTraffic />
-      </Box>
+      </Content>
     </Box>
   );
 };

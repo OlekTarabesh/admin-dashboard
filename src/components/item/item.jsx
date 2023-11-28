@@ -3,7 +3,7 @@ import { Typography, useTheme } from "@mui/material";
 import { Menu, MenuItem } from "react-pro-sidebar";
 import { tokens } from "../../theme";
 
-const Item = ({ title, to, icon, selected, setSelected }) => {
+const Item = ({ title, to, icon, selected, selectedHandler }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
@@ -14,7 +14,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
         style={{
           color: colors.grey[100],
         }}
-        onClick={() => setSelected(title)}
+        onClick={() => selectedHandler(title)}
         icon={icon}
         /* Here👇🏻 is a new styling of MUI library. Check it out! */
         rootStyles={{

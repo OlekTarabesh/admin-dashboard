@@ -1,6 +1,4 @@
-import { useTheme } from "@emotion/react";
-
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../../theme";
 
 import { OneTransaction } from "./OneTransaction";

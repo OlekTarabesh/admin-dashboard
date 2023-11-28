@@ -1,35 +1,29 @@
-import { useTheme } from "@emotion/react";
+import { Box, useTheme } from "@mui/material";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 
-import { Box, Button } from "@mui/material";
-import { tokens } from "../../../theme";
-import Header from "../../../components/Header";
+import Header from "../../../../components/Header";
+
+import { tokens } from "../../../../theme";
+import { ButtonStyled, Wrapper } from "./styles";
 
 export const DashboardHeader = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   return (
-    <Box
-      mb="25px"
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-    >
+    <Wrapper>
       <Header title="DASHBOARD" subtitle="Wellcome to your dashboard" />
       <Box>
-        <Button
+        <ButtonStyled
           sx={{
             backgroundColor: colors.blueAccent[700],
             color: colors.grey[100],
-            fontSize: "14px",
-            fontWeight: "bold",
-            padding: "10px 20px",
           }}
         >
           <DownloadOutlinedIcon sx={{ mr: "10px" }} />
           Download Reeports
-        </Button>
+        </ButtonStyled>
       </Box>
-    </Box>
+    </Wrapper>
   );
 };
