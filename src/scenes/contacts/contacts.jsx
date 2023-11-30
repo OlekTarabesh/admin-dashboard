@@ -1,19 +1,26 @@
 import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { tokens } from "../../theme";
-import { mockDataContacts } from "../../data/mockData";
+
 import Header from "../../components/Header";
+
+import { mockDataContacts } from "../../data/mockData";
+import { tokens } from "../../theme";
 
 const Contacts = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registrar ID", flex: 0.5 },
+    {
+      field: "registrarId",
+      headerName: "Registrar ID",
+      minWidth: 70,
+      flex: 1,
+    },
     {
       field: "name",
       headerName: "Name",
+      maxWidth: 180,
       flex: 1,
       cellClassName: "name-column--cell",
     },
@@ -21,32 +28,40 @@ const Contacts = () => {
       field: "age",
       headerName: "Age",
       type: "number",
+      width: 20,
+      flex: 1,
+
       headerAlign: "left",
       align: "left",
     },
     {
       field: "phone",
       headerName: "Phone Number",
+      width: 90,
       flex: 1,
     },
     {
       field: "email",
       headerName: "Email",
+      width: 28,
       flex: 1,
     },
     {
       field: "address",
       headerName: "Address",
+      width: 39,
       flex: 1,
     },
     {
       field: "city",
       headerName: "City",
+      width: 19,
       flex: 1,
     },
     {
       field: "zipCode",
       headerName: "ZipCode",
+      width: 42,
       flex: 1,
     },
   ];
@@ -64,7 +79,7 @@ const Contacts = () => {
             border: "none",
           },
           "& .MuiDataGrid-cell": {
-            borderBottom: "none",
+            borderBottom: "none !important",
           },
           "& .name-colomn--cell": {
             color: colors.greenAccent[300],
@@ -83,6 +98,11 @@ const Contacts = () => {
           },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
             color: `${colors.grey[100]} !important`,
+          },
+          "& .MuiDataGrid-menuIcon, .MuiButtonBase-root": {
+            "@media (max-width: 1024px)": {
+              display: "none",
+            },
           },
         }}
       >
