@@ -9,7 +9,6 @@ const Invoices = () => {
   const colors = tokens(theme.palette.mode);
 
   const columns = [
-    { field: "id", headerName: "ID" },
     {
       field: "name",
       headerName: "Name",
@@ -72,6 +71,11 @@ const Invoices = () => {
           },
           "& .MuiCheckbox-root": {
             color: `${colors.greenAccent[200]} !important`,
+          },
+          "& .MuiDataGrid-menuIcon, .MuiDataGrid-iconButtonContainer": {
+            "@media (max-width: 992px)": {
+              display: "none !important",
+            },
           },
         }}
       >
