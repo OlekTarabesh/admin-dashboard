@@ -1,34 +1,80 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { tokens } from "../../theme";
-import { mockDataTeam } from "../../data/mockData";
+
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
+
 import Header from "../../components/Header";
+import { mockDataTeam } from "../../data/mockData";
+import { tokens } from "../../theme";
 
 const Team = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  const styles = {
+    margin: "40px 0 0 0",
+    height: "75vh",
+    "@media (max-width: 1110px)": {
+      "& .MuiTypography-root": {
+        display: "none !important",
+      },
+    },
+    "& .MuiDataGrid-menuIcon": {
+      "@media (max-width: 768px)": {
+        display: "none !important",
+      },
+      border: "none !important",
+    },
+    "& .MuiDataGrid-root": {
+      border: "none !important",
+    },
+    "& .MuiDataGrid-iconButtonContainer": {
+      display: "none",
+    },
+    "& .MuiDataGrid-cell": {
+      borderBottom: "none",
+    },
+    "& .name-colomn--cell": {
+      color: colors.greenAccent[300],
+    },
+    "& .MuiDataGrid-columnHeaders": {
+      backgroundColor: colors.blueAccent[700],
+      borderBottom: "none",
+    },
+    "& .MuiDataGrid-virtualScroller": {
+      backgroundColor: colors.primary[400],
+      borderBottom: "none",
+    },
+    "& .MuiDataGrid-footerContainer": {
+      backgroundColor: colors.blueAccent[700],
+      borderTop: "none",
+    },
+  };
+
   const columns = [
-    { field: "id", headerName: "ID" },
     {
       field: "name",
       headerName: "Name",
       flex: 1,
+      minWidth: 100,
+      overflow: "auto",
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
       headerName: "Age",
       type: "number",
+      width: 80,
+      flex: 1,
       headerAlign: "left",
       align: "left",
     },
     {
       field: "phone",
       headerName: "Phone Number",
+      minWidth: 70,
       flex: 1,
     },
     {
@@ -69,33 +115,7 @@ const Team = () => {
   return (
     <Box m="20px">
       <Header title="TEAM" subtitle="Managing the Team Members" />
-      <Box
-        m="40px 0 0 0"
-        height="75vh"
-        sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .name-colomn--cell": {
-            color: colors.greenAccent[300],
-          },
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: colors.primary[400],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-footerContainer": {
-            backgroundColor: colors.blueAccent[700],
-            borderTop: "none",
-          },
-        }}
-      >
+      <Box sx={styles}>
         <DataGrid rows={mockDataTeam} columns={columns} />
       </Box>
     </Box>

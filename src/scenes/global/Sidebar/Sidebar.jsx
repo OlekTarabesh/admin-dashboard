@@ -23,6 +23,7 @@ const Sidebarr = () => {
       collapsed={!isCollapsed}
       rootStyles={{
         [`.${sidebarClasses.container}`]: {
+          minHeight: "100vh",
           background: `${colors.primary[400]} !important`,
         },
         [theme.breakpoints.down("sm")]: {
