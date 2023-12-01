@@ -1,10 +1,13 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { tokens } from "../../theme";
-import { mockDataInvoices } from "../../data/mockData";
+
 import Header from "../../components/Header";
 
-const Invoices = () => {
+import { tokens } from "../../theme";
+import { mockDataInvoices } from "../../data/mockData";
+import { boxStyles } from "./styles";
+
+export const Invoices = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -41,48 +44,14 @@ const Invoices = () => {
       flex: 1,
     },
   ];
+
+  console.log(boxStyles(colors), "boxStyles(colors)");
   return (
     <Box m="20px">
       <Header title="Invoice" subtitle="List of Invoice Balances" />
-      <Box
-        m="40px 0 0 0"
-        height="75vh"
-        sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .name-colomn--cell": {
-            color: colors.greenAccent[300],
-          },
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: colors.primary[400],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-footerContainer": {
-            backgroundColor: colors.blueAccent[700],
-            borderTop: "none",
-          },
-          "& .MuiCheckbox-root": {
-            color: `${colors.greenAccent[200]} !important`,
-          },
-          "& .MuiDataGrid-menuIcon, .MuiDataGrid-iconButtonContainer": {
-            "@media (max-width: 992px)": {
-              display: "none !important",
-            },
-          },
-        }}
-      >
+      <Box sx={boxStyles(colors)}>
         <DataGrid checkboxSelection rows={mockDataInvoices} columns={columns} />
       </Box>
     </Box>
   );
 };
-
-export default Invoices;

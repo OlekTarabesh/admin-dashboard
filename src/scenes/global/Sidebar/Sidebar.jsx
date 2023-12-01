@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Sidebar, sidebarClasses } from "react-pro-sidebar";
 import { useTheme } from "@mui/material";
 
-import { tokens } from "../../../theme";
-import { sidebarDB } from "./db";
 import { MenuSidebar } from "./MenuSidebar";
 
-const Sidebarr = () => {
+import { tokens } from "../../../theme";
+import { sidebarDB } from "./db";
+
+export const Sidebarr = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -41,5 +42,3 @@ const Sidebarr = () => {
     </Sidebar>
   );
 };
-
-export default Sidebarr;

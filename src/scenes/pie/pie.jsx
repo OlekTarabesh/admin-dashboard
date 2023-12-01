@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
+
 import Header from "../../components/Header";
 import PieChart from "../../components/PieChart";
 
-const Pie = () => {
+export const Pie = () => {
   return (
     <Box m="20px">
       <Header title="Pie Chart" subtitle="Simple Pie Chart" />
@@ -12,5 +13,3 @@ const Pie = () => {
     </Box>
   );
 };
-
-export default Pie;

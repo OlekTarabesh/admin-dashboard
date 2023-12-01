@@ -1,5 +1,7 @@
 import React from "react";
-import { SidebarWrapper } from "../styles";
+
+import { formatDate } from "@fullcalendar/core";
+
 import {
   List,
   ListItem,
@@ -7,8 +9,9 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { formatDate } from "@fullcalendar/core";
+
 import { tokens } from "../../../theme";
+import { SidebarWrapper } from "../styles";
 
 const CalendarSidebar = ({ data }) => {
   const theme = useTheme();

@@ -9,10 +9,10 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { Box } from "@mui/material";
 
 import Header from "../../components/Header";
-import { CalendarStyled, Content, Wrapper } from "./styles";
 import CalendarSidebar from "./calendar-sidebar/CalendarSidebar";
+import { CalendarStyled, Content, Wrapper } from "./styles";
 
-const Calendar = () => {
+export const Calendar = () => {
   const [currentEvents, setCurrentEvents] = useState([]);
 
   //this will trigger prompt of what type of event you want to add
@@ -42,13 +42,11 @@ const Calendar = () => {
       selected.event.remove();
     }
   };
-
   return (
     <Wrapper>
       <Box width="auto">
         <Header sx title="CALENDAR" subtitle="Fill Calendar Interactive Page" />
       </Box>
-
       <Content>
         <CalendarSidebar data={currentEvents} />
         {/* CALENDAR */}
@@ -92,5 +90,3 @@ const Calendar = () => {
     </Wrapper>
   );
 };
-
-export default Calendar;

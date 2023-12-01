@@ -14,12 +14,10 @@ import { Content } from "./styles";
 import { mockTransactions } from "../../data/mockData";
 import { row1 } from "./db";
 
-const Dashboard = () => {
+export const Dashboard = () => {
   return (
     <Box m="20px">
-      {/* HEADER */}
       <DashboardHeader />
-      {/* GRID AND CHARTS */}
       <Content>
         {/* ROW 1 */}
         {row1.map((bar, i) => (
@@ -42,5 +40,3 @@ const Dashboard = () => {
     </Box>
   );
 };
-
-export default Dashboard;

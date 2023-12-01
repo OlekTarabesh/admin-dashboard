@@ -5,8 +5,9 @@ import Header from "../../components/Header";
 
 import { mockDataContacts } from "../../data/mockData";
 import { tokens } from "../../theme";
+import { boxStyles } from "./styles";
 
-const Contacts = () => {
+export const Contacts = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -71,41 +72,7 @@ const Contacts = () => {
         title="Contacts"
         subtitle="List of Contacts for Future Reference"
       />
-      <Box
-        m="40px 0 0 0"
-        height="75vh"
-        sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none !important",
-          },
-          "& .name-colomn--cell": {
-            color: colors.greenAccent[300],
-          },
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: colors.primary[400],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-footerContainer": {
-            backgroundColor: colors.blueAccent[700],
-            borderTop: "none",
-          },
-          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-            color: `${colors.grey[100]} !important`,
-          },
-          "& .MuiDataGrid-menuIcon, .MuiButtonBase-root": {
-            "@media (max-width: 1024px)": {
-              display: "none",
-            },
-          },
-        }}
-      >
+      <Box sx={boxStyles(colors)}>
         <DataGrid
           rows={mockDataContacts}
           columns={columns}
@@ -116,5 +83,3 @@ const Contacts = () => {
     </Box>
   );
 };
-
-export default Contacts;

@@ -12,7 +12,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { ColorModeContext, tokens } from "../../theme";
 import Burger from "./Sidebar/Burger";
 
-const Topbar = () => {
+export const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
@@ -55,5 +55,3 @@ const Topbar = () => {
     </div>
   );
 };
-
-export default Topbar;

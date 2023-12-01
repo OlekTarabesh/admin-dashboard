@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+
 import { Typography, useTheme } from "@mui/material";
+
 import { Menu, MenuItem } from "react-pro-sidebar";
+
 import { tokens } from "../../theme";
 
 const Item = ({ title, to, icon, selected, selectedHandler }) => {
