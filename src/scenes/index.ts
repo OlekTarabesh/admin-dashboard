@@ -6,7 +6,7 @@ export * from "./faq/faq";
 export * from "./form/form";
 export * from "./geography/geography";
 export * from "./global/Sidebar/Sidebar";
-export * from ".//global/Topbar";
+export * from "./global/Topbar";
 export * from "./invoices/invoices";
 export * from "./line/line";
 export * from "./pie/pie";
