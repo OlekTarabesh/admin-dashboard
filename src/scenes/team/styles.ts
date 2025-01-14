@@ -1,4 +1,15 @@
-export const boxStyles = (colors) => {
+import { Box, styled } from "@mui/material";
+import { IThemeColorTokens } from "../../global-types";
+
+export const Wrapper = styled(Box)`
+  width: 60%;
+  margin: 0 auto;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const boxStyles = (colors: IThemeColorTokens) => {
   return {
     margin: "40px 0 0 0",
     height: "75vh",

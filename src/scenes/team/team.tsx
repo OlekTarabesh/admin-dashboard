@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 
@@ -8,13 +9,15 @@ import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
 import { mockDataTeam } from "../../data/mockData";
 import { tokens } from "../../theme";
-import { boxStyles } from "./styles";
+import { IColumn } from "./types";
 
-export const Team = () => {
+import { boxStyles, Wrapper } from "./styles";
+
+export const Team: FC = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const columns = [
+  const columns: IColumn[] = [
     {
       field: "name",
       headerName: "Name",
@@ -49,17 +52,13 @@ export const Team = () => {
       flex: 1,
       renderCell: ({ row: { access } }) => {
         return (
-          <Box
-            width="60%"
-            m="0 auto"
-            p="5px"
-            display="flex"
-            justifyContent="center"
-            backgroundColor={
-              access === "admin"
-                ? colors.greenAccent[600]
-                : colors.greenAccent[700]
-            }
+          <Wrapper
+            sx={{
+              backgroundColor:
+                access === "admin"
+                  ? colors.greenAccent[600]
+                  : colors.greenAccent[700],
+            }}
           >
             {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
             {access === "manager" && <SecurityOutlinedIcon />}
@@ -68,7 +67,7 @@ export const Team = () => {
             <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
               {access}
             </Typography>
-          </Box>
+          </Wrapper>
         );
       },
     },
