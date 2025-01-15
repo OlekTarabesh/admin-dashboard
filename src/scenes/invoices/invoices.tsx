@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 
@@ -5,13 +6,15 @@ import Header from "../../components/Header";
 
 import { tokens } from "../../theme";
 import { mockDataInvoices } from "../../data/mockData";
-import { boxStyles } from "./styles";
+import { IInvoiceColumns } from "./types";
 
-export const Invoices = () => {
+import { boxStyles, Wrapper } from "./styles";
+
+export const Invoices: FC = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const columns = [
+  const columns: IInvoiceColumns[] = [
     {
       field: "name",
       headerName: "Name",
@@ -45,13 +48,12 @@ export const Invoices = () => {
     },
   ];
 
-  console.log(boxStyles(colors), "boxStyles(colors)");
   return (
-    <Box m="20px">
+    <Wrapper>
       <Header title="Invoice" subtitle="List of Invoice Balances" />
       <Box sx={boxStyles(colors)}>
         <DataGrid checkboxSelection rows={mockDataInvoices} columns={columns} />
       </Box>
-    </Box>
+    </Wrapper>
   );
 };

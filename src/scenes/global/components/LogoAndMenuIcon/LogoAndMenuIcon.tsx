@@ -1,12 +1,18 @@
+import { FC } from "react";
+import { Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import { Menu, MenuItem } from "react-pro-sidebar";
 
 import { tokens } from "../../../../theme";
+import { ILogoAndMenuIconProps } from "./logoAndMenuIcon.types";
 
-export const LogoAndMenuIcon = ({ collapsedHandler, isCollapsed }) => {
+const LogoAndMenuIcon: FC<ILogoAndMenuIconProps> = ({
+  collapsedHandler,
+  isCollapsed,
+}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   return (
     <Menu>
       <MenuItem
@@ -48,3 +54,5 @@ export const LogoAndMenuIcon = ({ collapsedHandler, isCollapsed }) => {
     </Menu>
   );
 };
+
+export default LogoAndMenuIcon;

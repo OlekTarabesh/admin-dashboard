@@ -1,15 +1,17 @@
-import { Box } from "@mui/material";
+import { FC } from "react";
 
 import Header from "../../components/Header";
 import PieChart from "../../components/PieChart";
 
-export const Pie = () => {
+import { PieContainer, Wrapper } from "./styles";
+
+export const Pie: FC = () => {
   return (
-    <Box m="20px">
+    <Wrapper>
       <Header title="Pie Chart" subtitle="Simple Pie Chart" />
-      <Box height="80vh">
+      <PieContainer>
         <PieChart />
-      </Box>
-    </Box>
+      </PieContainer>
+    </Wrapper>
   );
 };

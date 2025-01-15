@@ -5,7 +5,7 @@ import {
   IColorModeContextType,
   IThemeColorTokens,
   TThemeSettings,
-} from "./global-types";
+} from "./globalTypes";
 
 // color design tokens export
 export const tokens = (mode: PaletteMode): IThemeColorTokens => ({

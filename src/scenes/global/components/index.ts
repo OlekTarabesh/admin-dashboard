@@ -1,3 +1,4 @@
 export * from "./LogoAndMenuIcon";
-export * from "./User";
+export * from "./MenuSidebar";
 export * from "./SideItems";
+export * from "./User";

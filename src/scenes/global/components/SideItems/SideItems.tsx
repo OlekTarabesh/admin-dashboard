@@ -1,21 +1,18 @@
+import { FC } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 
 import Item from "../../../../components/item/item";
 
 import { tokens } from "../../../../theme";
+import { ISideItemsProps } from "./sideItems.types";
 
-export const SideItems = ({ data, selected, selectedHandler }) => {
+const SideItems: FC<ISideItemsProps> = ({ data }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   return (
     <Box>
-      <Item
-        title={data.title}
-        to={data.to}
-        icon={data.icon}
-        selected={selected}
-        selectedHandler={selectedHandler}
-      />
+      <Item title={data.title} to={data.to} icon={data.icon} />
       <Typography
         variant="h6"
         color={colors.grey[300]}
@@ -24,3 +21,5 @@ export const SideItems = ({ data, selected, selectedHandler }) => {
     </Box>
   );
 };
+
+export default SideItems;

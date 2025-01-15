@@ -1,25 +1,21 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 
+import { MenuSidebar } from "../components";
+
 import { tokens } from "../../../theme";
-import { MenuSidebar } from "./MenuSidebar";
-import { sidebarDB } from "./db";
+import { sidebarDB } from "../config";
 
 const drawerWidth = "100%";
 
-const Burger = () => {
+const MobileSidebar: FC = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Dashboard");
 
-  const selectedHandler = (title) => {
-    setSelected(title);
-    setIsCollapsed(!isCollapsed);
-  };
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
   const collapsedHandler = () => {
     setIsCollapsed(!isCollapsed);
@@ -29,6 +25,9 @@ const Burger = () => {
     <Box
       sx={{
         display: "flex",
+        "& ::-webkit-scrollbar": {
+          display: "none",
+        },
         [theme.breakpoints.up("sm")]: {
           display: "none",
         },
@@ -54,12 +53,10 @@ const Burger = () => {
           data={sidebarDB}
           isCollapsed={isCollapsed}
           collapsedHandler={collapsedHandler}
-          selected={selected}
-          selectedHandler={selectedHandler}
         />
       </Drawer>
     </Box>
   );
 };
 
-export default Burger;
+export default MobileSidebar;

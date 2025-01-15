@@ -1,25 +1,22 @@
+import { CSSProperties, FC } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 
 import { tokens } from "../../../../theme";
+import { ImageContainer, imageStyles } from "./styles";
 
-export const User = () => {
+const User: FC = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   return (
     <Box mb="25px">
-      <Box display="flex" justifyContent="center" alignItems="center">
+      <ImageContainer>
         <img
           src={"../../assets/user.jpeg"}
           alt="profile-user"
-          width="100px"
-          height="100px"
-          style={{
-            cursor: "pointer",
-            borderRadius: "50%",
-            objectFit: "cover",
-          }}
+          style={imageStyles() as CSSProperties}
         />
-      </Box>
+      </ImageContainer>
       <Box textAlign="center">
         <Typography
           variant="h3"
@@ -38,3 +35,5 @@ export const User = () => {
     </Box>
   );
 };
+
+export default User;

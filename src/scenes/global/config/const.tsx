@@ -10,7 +10,9 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
-export const sidebarDB = {
+import { ISidebarData } from "../types";
+
+export const sidebarDB: ISidebarData = {
   dashboard: [{ title: "Dashboard", to: "/", icon: <HomeOutlinedIcon /> }],
   data: [
     { title: "Manage Team", to: "/team", icon: <PeopleOutlinedIcon /> },
