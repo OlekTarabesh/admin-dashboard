@@ -2,10 +2,12 @@ import { FC } from "react";
 import { Box } from "@mui/material";
 import { Menu } from "react-pro-sidebar";
 
-import { LogoAndMenuIcon, SideItems, User } from "./components";
-import { IMenuSidebarProps } from "./sidebar.types";
+import { LogoAndMenuIcon } from "../LogoAndMenuIcon";
+import { User } from "../User";
+import { SideItems } from "../SideItems";
+import { IMenuSidebarProps } from "./menuSidebar.types";
 
-export const MenuSidebar: FC<IMenuSidebarProps> = ({
+const MenuSidebar: FC<IMenuSidebarProps> = ({
   data,
   isCollapsed,
   collapsedHandler,
@@ -47,3 +49,5 @@ export const MenuSidebar: FC<IMenuSidebarProps> = ({
     </Menu>
   );
 };
+
+export default MenuSidebar;

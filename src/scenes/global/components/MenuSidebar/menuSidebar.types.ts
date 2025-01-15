@@ -1,4 +1,4 @@
-import { ISidebarData } from "./types";
+import { ISidebarData } from "../../types";
 
 export interface IMenuSidebarProps {
   data: ISidebarData;

@@ -4,13 +4,14 @@ import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 
+import { MenuSidebar } from "../components";
+
 import { tokens } from "../../../theme";
-import { MenuSidebar } from "./MenuSidebar";
-import { sidebarDB } from "./config";
+import { sidebarDB } from "../config";
 
 const drawerWidth = "100%";
 
-const Burger: FC = () => {
+const MobileSidebar: FC = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -24,6 +25,9 @@ const Burger: FC = () => {
     <Box
       sx={{
         display: "flex",
+        "& ::-webkit-scrollbar": {
+          display: "none",
+        },
         [theme.breakpoints.up("sm")]: {
           display: "none",
         },
@@ -55,4 +59,4 @@ const Burger: FC = () => {
   );
 };
 
-export default Burger;
+export default MobileSidebar;

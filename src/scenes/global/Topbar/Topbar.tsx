@@ -1,5 +1,4 @@
 import { FC, useContext } from "react";
-
 import { Box, IconButton, useTheme } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -9,9 +8,11 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
+import { MobileSidebar } from "../MobileSidebar";
+
 import { ColorModeContext, tokens } from "../../../theme";
-import Burger from "../Sidebar/Burger";
-import { BoxStyled, SearchBox, Wrapper } from "../styles";
+
+import { BoxStyled, SearchBox, Wrapper } from "./styles";
 
 const Topbar: FC = () => {
   const theme = useTheme();
@@ -21,7 +22,7 @@ const Topbar: FC = () => {
   return (
     <Wrapper>
       <SearchBox>
-        <Burger />
+        <MobileSidebar />
         <BoxStyled sx={{ backgroundColor: colors.primary[400] }}>
           <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
           <IconButton type="button" sx={{ p: 1 }}>

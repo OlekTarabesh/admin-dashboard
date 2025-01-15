@@ -2,10 +2,9 @@ import { FC, useState } from "react";
 import { Sidebar, sidebarClasses } from "react-pro-sidebar";
 import { useTheme } from "@mui/material";
 
-import { MenuSidebar } from "./MenuSidebar";
-
 import { tokens } from "../../../theme";
-import { sidebarDB } from "./config";
+import { sidebarDB } from "../config";
+import { MenuSidebar } from "../components";
 
 const Sidebarr: FC = () => {
   const theme = useTheme();

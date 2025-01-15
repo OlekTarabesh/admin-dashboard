@@ -1,7 +1,7 @@
 import { CSSProperties, FC } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 
-import { tokens } from "../../../../../theme";
+import { tokens } from "../../../../theme";
 import { ImageContainer, imageStyles } from "./styles";
 
 const User: FC = () => {

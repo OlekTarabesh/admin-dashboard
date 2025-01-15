@@ -1,9 +1,9 @@
 import { FC } from "react";
+import { Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import { Menu, MenuItem } from "react-pro-sidebar";
 
-import { tokens } from "../../../../../theme";
+import { tokens } from "../../../../theme";
 import { ILogoAndMenuIconProps } from "./logoAndMenuIcon.types";
 
 const LogoAndMenuIcon: FC<ILogoAndMenuIconProps> = ({

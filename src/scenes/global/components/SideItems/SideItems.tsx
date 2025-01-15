@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 
-import Item from "../../../../../components/item/item";
+import Item from "../../../../components/item/item";
 
-import { tokens } from "../../../../../theme";
+import { tokens } from "../../../../theme";
 import { ISideItemsProps } from "./sideItems.types";
 
 const SideItems: FC<ISideItemsProps> = ({ data }) => {
