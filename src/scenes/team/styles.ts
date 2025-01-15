@@ -1,5 +1,5 @@
 import { Box, styled } from "@mui/material";
-import { IThemeColorTokens } from "../../global-types";
+import { IThemeColorTokens } from "../../globalTypes";
 
 export const Wrapper = styled(Box)`
   width: 60%;

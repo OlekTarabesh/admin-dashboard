@@ -1,4 +1,5 @@
-import { GridAlignment, GridColDef } from "@mui/x-data-grid";
+import { GridColDef } from "@mui/x-data-grid";
+import { IRenderCellDataGrid } from "../../../globalTypes";
 
 type TAccess = "admin" | "manager" | "user";
 
@@ -11,17 +12,7 @@ interface IRow {
   access: TAccess | string;
 }
 
-export interface IColumn {
-  field: string;
-  headerName?: string;
-  flex?: 1;
-  overflow?: string;
-  cellClassName?: string;
-  type?: string;
-  width?: number;
-  minWidth?: number;
-  headerAlign?: GridAlignment;
-  align?: GridAlignment;
+export interface IColumn extends IRenderCellDataGrid {
   renderCell?: (params: { row: IRow }) => JSX.Element;
 }
 

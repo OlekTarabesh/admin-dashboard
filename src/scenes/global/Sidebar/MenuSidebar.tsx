@@ -1,14 +1,14 @@
+import { FC } from "react";
 import { Box } from "@mui/material";
 import { Menu } from "react-pro-sidebar";
 
 import { LogoAndMenuIcon, SideItems, User } from "./components";
+import { IMenuSidebarProps } from "./sidebar.types";
 
-export const MenuSidebar = ({
+export const MenuSidebar: FC<IMenuSidebarProps> = ({
   data,
   isCollapsed,
   collapsedHandler,
-  selected,
-  selectedHandler,
 }) => {
   return (
     <Menu
@@ -25,46 +25,23 @@ export const MenuSidebar = ({
         },
       }}
     >
-      {/* LOGO AND MENU ICON */}
       <LogoAndMenuIcon
         isCollapsed={isCollapsed}
         collapsedHandler={collapsedHandler}
       />
-      {/* USER */}
       {isCollapsed && <User />}
-      {/* All items of sidebar divided on grupes*/}
       <Box paddingLeft={isCollapsed ? "10%" : undefined}>
         {data.dashboard.map((item, i) => (
-          <SideItems
-            key={i}
-            data={item}
-            selected={selected}
-            selectedHandler={selectedHandler}
-          />
+          <SideItems key={i} data={item} />
         ))}
         {data.data.map((item, i) => (
-          <SideItems
-            key={i}
-            data={item}
-            selected={selected}
-            selectedHandler={selectedHandler}
-          />
+          <SideItems key={i} data={item} />
         ))}
         {data.pages.map((item, i) => (
-          <SideItems
-            key={i}
-            data={item}
-            selected={selected}
-            selectedHandler={selectedHandler}
-          />
+          <SideItems key={i} data={item} />
         ))}
         {data.charts.map((item, i) => (
-          <SideItems
-            key={i}
-            data={item}
-            selected={selected}
-            selectedHandler={selectedHandler}
-          />
+          <SideItems key={i} data={item} />
         ))}
       </Box>
     </Menu>

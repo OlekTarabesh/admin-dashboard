@@ -1,24 +1,22 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Sidebar, sidebarClasses } from "react-pro-sidebar";
 import { useTheme } from "@mui/material";
 
 import { MenuSidebar } from "./MenuSidebar";
 
 import { tokens } from "../../../theme";
-import { sidebarDB } from "./db";
+import { sidebarDB } from "./config";
 
-export const Sidebarr = () => {
+const Sidebarr: FC = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(true);
-  const [selected, setSelected] = useState("Dashboard");
-  const selectedHandler = (title) => {
-    setSelected(title);
-  };
+
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
 
   const collapsedHandler = () => {
     setIsCollapsed(!isCollapsed);
   };
+
   return (
     <Sidebar
       collapsed={!isCollapsed}
@@ -36,9 +34,9 @@ export const Sidebarr = () => {
         data={sidebarDB}
         isCollapsed={isCollapsed}
         collapsedHandler={collapsedHandler}
-        selected={selected}
-        selectedHandler={selectedHandler}
       />
     </Sidebar>
   );
 };
+
+export default Sidebarr;
