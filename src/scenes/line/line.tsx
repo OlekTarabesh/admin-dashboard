@@ -5,7 +5,7 @@ import LineChart from "../../components/LineChart";
 
 import { LineContainer, Wrapper } from "./styles";
 
-export const Line: FC = () => {
+const Line: FC = () => {
   return (
     <Wrapper>
       <Header title="Line Chart" subtitle="Simple Line Chart" />
@@ -15,3 +15,5 @@ export const Line: FC = () => {
     </Wrapper>
   );
 };
+
+export default Line;
