@@ -6,3 +6,10 @@ export interface IMockDataInvoices {
   phone: string;
   date: string;
 }
+
+export interface IMockTransactions {
+  txId: string;
+  user: string;
+  date: string;
+  cost: string;
+}

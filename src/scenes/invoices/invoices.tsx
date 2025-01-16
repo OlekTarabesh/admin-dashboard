@@ -10,7 +10,7 @@ import { IInvoiceColumns } from "./types";
 
 import { boxStyles, Wrapper } from "./styles";
 
-export const Invoices: FC = () => {
+const Invoices: FC = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -57,3 +57,4 @@ export const Invoices: FC = () => {
     </Wrapper>
   );
 };
+export default Invoices;

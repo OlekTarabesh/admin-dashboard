@@ -5,7 +5,7 @@ import PieChart from "../../components/PieChart";
 
 import { PieContainer, Wrapper } from "./styles";
 
-export const Pie: FC = () => {
+const Pie: FC = () => {
   return (
     <Wrapper>
       <Header title="Pie Chart" subtitle="Simple Pie Chart" />
@@ -15,3 +15,5 @@ export const Pie: FC = () => {
     </Wrapper>
   );
 };
+
+export default Pie;

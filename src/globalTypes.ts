@@ -26,6 +26,7 @@ export interface IRenderCellDataGrid {
   type?: string;
   width?: number;
   minWidth?: number;
+  maxWidth?: number;
   headerAlign?: GridAlignment;
   align?: GridAlignment;
 }

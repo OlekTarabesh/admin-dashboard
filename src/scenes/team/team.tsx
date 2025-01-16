@@ -13,7 +13,7 @@ import { IColumn } from "./types";
 
 import { boxStyles, Wrapper } from "./styles";
 
-export const Team: FC = () => {
+const Team: FC = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -81,3 +81,5 @@ export const Team: FC = () => {
     </Box>
   );
 };
+
+export default Team;

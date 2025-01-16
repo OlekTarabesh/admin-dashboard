@@ -1,5 +1,5 @@
 import { tokens } from "../theme";
-import { IMockDataInvoices } from "./mockDataTypes";
+import { IMockDataInvoices, IMockTransactions } from "./mockDataTypes";
 
 export const mockDataTeam = [
   {
@@ -267,7 +267,7 @@ export const mockDataInvoices: IMockDataInvoices[] = [
   },
 ];
 
-export const mockTransactions = [
+export const mockTransactions: IMockTransactions[] = [
   {
     txId: "01e4dsa",
     user: "johndoe",
