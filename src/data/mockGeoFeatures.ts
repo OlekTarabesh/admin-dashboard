@@ -1,4 +1,6 @@
-export const geoFeatures = {
+import { IGeoFeatures } from "./types";
+
+export const geoFeatures: IGeoFeatures = {
   type: "FeatureCollection",
   features: [
     {
