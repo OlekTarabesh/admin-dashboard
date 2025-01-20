@@ -2,8 +2,8 @@ import { FC } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 
 import { tokens } from "../../../../theme";
-import BarChart from "../../../../components/BarChart";
 import { Wrapper } from "./styles";
+import { BarChart } from "../../../../components";
 
 const SalesQuantity: FC = () => {
   const theme = useTheme();

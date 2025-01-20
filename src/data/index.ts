@@ -1,3 +1,3 @@
 export * from "./mockData";
-export * from "./mockDataTypes";
+export * from "./types";
 export * from "./mockGeoFeatures";
