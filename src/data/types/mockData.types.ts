@@ -35,18 +35,6 @@ export interface IMockDataContracts {
   registrarId: number;
 }
 
-export interface IMockBarData {
-  country: string;
-  "hot dog": number;
-  "hot dogColor": string;
-  burger: number;
-  burgerColor: string;
-  kebab: number;
-  kebabColor: string;
-  donut: number;
-  donutColor: string;
-}
-
 export interface IMockPieData {
   id: string;
   label: string;

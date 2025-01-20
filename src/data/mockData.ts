@@ -1,6 +1,6 @@
+import { BarDatum } from "@nivo/bar";
 import { tokens } from "../theme";
 import {
-  IMockBarData,
   IMockDataContracts,
   IMockDataInvoices,
   IMockDataTeam,
@@ -327,7 +327,7 @@ export const mockTransactions: IMockTransactions[] = [
   },
 ];
 
-export const mockBarData: IMockBarData[] = [
+export const mockBarData: BarDatum[] = [
   {
     country: "AD",
     "hot dog": 137,
